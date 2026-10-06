@@ -17,10 +17,13 @@ Dashboard phân tích hiệu suất kinh doanh thương mại điện tử toàn
 Mục tiêu chung: xây dựng dashboard theo dõi hiệu suất kinh doanh thương mại điện tử toàn cầu, giúp phát hiện điểm mạnh, điểm yếu và hỗ trợ quyết định về khu vực, danh mục, sản phẩm và khách hàng.
 Mục tiêu cụ thể:
 
-1.Theo dõi các chỉ số chính (doanh thu, lợi nhuận, đơn hàng, số sản phẩm đã bán, biên lợi nhuận) và so sánh với năm trước.
-2.Nhận biết xu hướng của doanh thu theo tháng.
-3.Đánh giá đóng góp doanh thu và biên lợi nhuận theo khu vực, danh mục và sản phẩm.
-4.Hiểu cơ cấu khách hàng: phân khúc, phương thức thanh toán, quốc gia và nhóm khách hàng lớn.
+1. Theo dõi các chỉ số chính (doanh thu, lợi nhuận, đơn hàng, số sản phẩm đã bán, biên lợi nhuận) và so sánh với năm trước.
+
+2. Nhận biết xu hướng của doanh thu theo tháng.
+
+3. Đánh giá đóng góp doanh thu và biên lợi nhuận theo khu vực, danh mục và sản phẩm.
+
+4. Hiểu cơ cấu khách hàng: phân khúc, phương thức thanh toán, quốc gia và nhóm khách hàng lớn.
 
 ---
 
