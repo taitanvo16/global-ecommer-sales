@@ -2,7 +2,6 @@
 
 Dashboard phân tích hiệu suất kinh doanh thương mại điện tử toàn cầu, xây dựng bằng **Power BI Desktop**. Báo cáo gồm 2 trang: **Tổng quan** (hiệu suất kinh doanh) và **Khách hàng & Sản phẩm** (ai mua, mua ở đâu, mua bằng cách nào, sản phẩm nào cần chú ý).
 
-> **English summary:** A two-page Power BI dashboard on a global e-commerce sales dataset (about 2,000 orders over 3 years). Page 1 tracks KPIs, year-over-year trend, regions, categories and top products. Page 2 covers customer segments, payment methods, geography, top customers and low-performing products. Includes a Date table, DAX time-intelligence measures and conditional formatting.
 
 ---
 
@@ -10,20 +9,18 @@ Dashboard phân tích hiệu suất kinh doanh thương mại điện tử toàn
 
 | Trang 1: Tổng quan | Trang 2: Khách hàng & Sản phẩm |
 |---|---|
-| ![Tổng quan](docs/page1-overview.png) | ![Khách hàng & Sản phẩm](docs/page2-customers-products.png) |
+| ![Tổng quan](images/page_1.png) | ![Khách hàng & Sản phẩm](images/page_2.png) |
 
 ---
 
 ## Mục tiêu dự án
+Mục tiêu chung: xây dựng dashboard theo dõi hiệu suất kinh doanh thương mại điện tử toàn cầu, giúp phát hiện điểm mạnh, điểm yếu và hỗ trợ quyết định về khu vực, danh mục, sản phẩm và khách hàng.
+Mục tiêu cụ thể:
 
-Trả lời các câu hỏi kinh doanh thường gặp:
-
-1. Kinh doanh đang tốt hay xấu so với năm trước?
-2. Xu hướng doanh thu theo tháng, có mùa vụ không?
-3. Khu vực và danh mục nào đóng góp nhiều doanh thu, danh mục nào lãi thấp?
-4. Sản phẩm nào bán chạy, sản phẩm nào doanh thu thấp hoặc đang lỗ?
-5. Ai là khách hàng chính, họ thuộc phân khúc nào và thanh toán bằng cách nào?
-6. Thị trường (quốc gia) nào tập trung doanh thu?
+1.Theo dõi các chỉ số chính (doanh thu, lợi nhuận, đơn hàng, số sản phẩm đã bán, biên lợi nhuận) và so sánh với năm trước.
+2.Nhận biết xu hướng của doanh thu theo tháng.
+3.Đánh giá đóng góp doanh thu và biên lợi nhuận theo khu vực, danh mục và sản phẩm.
+4.Hiểu cơ cấu khách hàng: phân khúc, phương thức thanh toán, quốc gia và nhóm khách hàng lớn.
 
 ---
 
@@ -50,18 +47,18 @@ Trả lời các câu hỏi kinh doanh thường gặp:
 | Doanh thu năm nay và năm trước | Line chart (2 đường) | Doanh thu theo tháng, so sánh cùng kỳ | Thể hiện xu hướng và mùa vụ, dễ so sánh hai năm |
 | Doanh thu theo khu vực | Bar chart ngang (sắp giảm dần) | Doanh thu theo khu vực | So sánh các hạng mục có tên dài, dễ xếp hạng |
 | Doanh thu và biên lợi nhuận theo danh mục | Line and clustered column chart (cột và marker, trục phụ) | Doanh thu (cột) và biên lợi nhuận (marker) | Đặt hai thước đo khác đơn vị cạnh nhau để thấy danh mục bán nhiều nhưng lãi thấp |
-| Top 5 sản phẩm | Bar chart ngang với bộ lọc Top N | 5 sản phẩm có doanh thu cao nhất | Tập trung vào nhóm đóng góp lớn nhất |
+| Top 5 sản phẩm có doanh thu cao nhất | Bar chart ngang với bộ lọc Top N | 5 sản phẩm có doanh thu cao nhất | Tập trung vào nhóm đóng góp lớn nhất |
 | Bộ lọc | Slicer dạng dropdown (Năm, Khu vực) | | Cho phép xem theo từng năm và khu vực |
 
 ### Trang 2: Khách hàng và Sản phẩm
 
 | Visual | Loại biểu đồ | Dữ liệu | Vì sao chọn |
 |---|---|---|---|
-| 5 thẻ KPI | Card | AOV, tổng khách hàng, đơn hàng trên mỗi khách, lợi nhuận trên mỗi đơn, doanh thu lũy kế năm | Chỉ số về hành vi khách hàng |
+| 5 thẻ KPI | Card | AOV, tổng khách hàng, đơn hàng trên mỗi khách, lợi nhuận trên mỗi đơn, doanh thu trên mỗi khách | Chỉ số về hành vi khách hàng |
 | Doanh thu theo quốc gia | Filled map (tô màu theo doanh thu) | Doanh thu theo quốc gia, tooltip có lợi nhuận và biên lợi nhuận | Thấy phân bố địa lý trong một cái nhìn |
-| Doanh thu theo phân khúc | Donut chart | Tỷ trọng doanh thu theo phân khúc khách hàng | Ít hạng mục (3 phân khúc), phù hợp để thể hiện tỷ trọng |
+| Doanh thu theo phân khúc khách hàng | Donut chart | Tỷ trọng doanh thu theo phân khúc khách hàng | Ít hạng mục (3 phân khúc), phù hợp để thể hiện tỷ trọng |
 | Số đơn hàng theo phân khúc và phương thức thanh toán | Matrix với nền gradient (heatmap) | Số đơn theo phân khúc và phương thức thanh toán | Ô đậm màu cho thấy tổ hợp phổ biến |
-| Top 10 khách hàng | Table với data bars và quy tắc màu chữ | Doanh thu, lợi nhuận, biên lợi nhuận của 10 khách hàng có doanh thu cao nhất | Xem chi tiết từng khách, biên dưới 20% hiện màu đỏ |
+| Top 10 khách hàng có doanh thu cao nhất | Table với data bars và quy tắc màu chữ | Doanh thu, lợi nhuận, biên lợi nhuận của 10 khách hàng có doanh thu cao nhất | Xem chi tiết từng khách, biên dưới 20% hiện màu đỏ |
 | Biên lợi nhuận theo danh mục và khu vực | Matrix với nền gradient đỏ, trắng, xanh | Biên lợi nhuận theo danh mục và khu vực | Phát hiện ô lãi thấp trong một cái nhìn |
 | 5 sản phẩm có doanh thu thấp nhất | Table với quy tắc màu | Doanh thu, lợi nhuận, biên lợi nhuận | Phát hiện sản phẩm lỗ (số âm hiện màu đỏ) |
 
@@ -75,11 +72,11 @@ Mô hình dạng **star schema** đơn giản:
 Date (1) ───────< (*) global_ecommerce_sales
  [Date]                [Order_Date]
 
-Measure Group   (bảng chứa các measure, không có quan hệ)
+Measure Group 
 ```
 
-- **global_ecommerce_sales** (bảng fact): đơn hàng, khách hàng, phân khúc, quốc gia, danh mục, sản phẩm, phương thức thanh toán, doanh thu, lợi nhuận, số lượng.
-- **Date** (bảng ngày): tạo bằng DAX, được đánh dấu là Date table, quan hệ 1-nhiều với `Order_Date`. Bắt buộc có để dùng time intelligence.
+- **global_ecommerce_sales** : Order_ID, Order_Date, Customer_Name, Customer_Segment, Country, Region, Product_Category, Product_Name, Quantity, Unit_Price, Payment_Method
+- **Date** : tạo bằng DAX, được đánh dấu là Date table, quan hệ 1-nhiều với `Order_Date`. 
 - **Measure Group**: gom toàn bộ measure, chia thư mục hiển thị (Core, Last Year, % Change, Format).
 
 ---
@@ -164,29 +161,6 @@ Số liệu dưới đây tính trên toàn bộ dữ liệu (khoảng 3 năm, 2
 ### Lưu ý khi đọc các chỉ số tăng trưởng
 
 Các chỉ số so với năm trước chỉ có ý nghĩa khi **chọn một năm cụ thể** ở slicer Năm. Khi để "All", phép so sánh sẽ lấy toàn bộ dữ liệu so với phần còn lại của năm trước nên cho kết quả sai lệch. Năm đầu tiên của dữ liệu (2023) chưa có năm trước nên các thẻ tăng trưởng hiển thị "--".
-
----
-
-## Thiết kế
-
-- Kích thước trang: **1920 × 1080**, hai trang cùng một lưới bố cục.
-- Phông chữ: Segoe UI.
-- Bảng màu:
-
-| Vai trò | Mã màu |
-|---|---|
-| Chữ chính, tiêu đề | `#0F2A4A` |
-| Màu chủ đạo (năm nay, cột nổi bật) | `#1E88E5` |
-| Biến thể nhạt | `#90CAF9` |
-| Năm trước | `#F4A582` |
-| Biên lợi nhuận (marker) | `#F57C00` |
-| Tăng, tốt | `#16A34A` |
-| Giảm, xấu | `#DC2626` |
-| Nền trang | `#F4F6FA` |
-
-- Màu xanh lá và đỏ chỉ dùng để biểu thị tốt và xấu.
-- Tiêu đề biểu đồ mô tả nội dung, không gắn con số cố định để vẫn đúng khi lọc theo năm hoặc khu vực.
-
 ---
 
 ## Cách sử dụng
@@ -203,30 +177,17 @@ Các chỉ số so với năm trước chỉ có ý nghĩa khi **chọn một n�
 ## Cấu trúc repo
 
 ```
-ecommerce-sales-dashboard/
+global-ecommerce-sales/
+├── images/
+│   ├── page_1.png
+│   └── page_2.png
 ├── README.md
-├── dashboard/
-│   └── ecommerce-sales.pbix
-├── docs/
-│   ├── page1-overview.png
-│   └── page2-customers-products.png
-├── dax/
-│   └── measures.dax
-└── LICENSE
+├── ecommerce-sales.pbix
 ```
-
 ---
-
 ## Nguồn dữ liệu
-
-- Dataset: **global-ecommerce-sales** — `[Điền nguồn và link, ví dụ Kaggle]`
-- Giấy phép dữ liệu: `[Điền giấy phép]`
-- Ghi chú: `[Ví dụ: dữ liệu mô phỏng, tên khách hàng không phải người thật]`
-
+- Dataset: **global-ecommerce-sales** — Dữ liệu được lấy trên Kaggle.
 ## Công cụ
-
 - Power BI Desktop (Power Query, DAX, mô hình dữ liệu, định dạng có điều kiện)
-
 ## Tác giả
-
-`[Tên của bạn]` — `[Liên kết GitHub hoặc LinkedIn]`
+Võ Tấn Tài - taitanvo16@gmail.com
